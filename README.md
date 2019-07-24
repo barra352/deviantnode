@@ -11,21 +11,31 @@ The functions for this package is quite easy and basic. All these contain the [d
 ## The "Basic"
 ```js
 const deviantnode = require('deviantnode');
-const popular = deviantnode.getPopularDeviations('CLIENT_ID','CLIENT_SECRET', 'Hello') //optional: a search query term
-  .then(response => console.log(response.results[0])); //show the first result
+
+const options = { //optional
+	category: 'digitalart/animation/',
+	q: 'test',
+	time: '24hr',
+	offset: 0,
+	limit: 5
+};
+deviantnode.getPopularDeviations('CLIENT_ID','CLIENT_SECRET', options)
+	.then(response => console.log(response)); //show the first result
 ```
 
 ## Functions
 
-### getDailyDeviations(client_id, client_secret)
+### getDailyDeviations(client_id, client_secret, [options])
 Browse daily deviations. [Source](https://www.deviantart.com/developers/http/v1/20160316/browse_dailydeviations/3de083a0c0a7733a46a53ae9cee74544)
 
 Parameters:
 * `CLIENT_ID`: the client id from your application.
 * `CLIENT_SECRET`: the client secret from your application.
+* `options`:
+  - `date`(optional): the day to browse, defaults to today. the string must be like this: `YYYY-MM-DD`.
 
 ```js
-const dailydeviations = deviantnode.getDailyDeviations('CLIENT_ID','CLIENT_SECRET')
+deviantnode.getDailyDeviations('CLIENT_ID','CLIENT_SECRET', { date: '2012-12-12' })
   .then(response => console.log(response));
 ```
 
@@ -37,7 +47,7 @@ Parameters:
 * `CLIENT_SECRET`: the client secret from your application.
 
 ```js
-const hot = deviantnode.getHotDeviations('CLIENT_ID','CLIENT_SECRET')
+deviantnode.getHotDeviations('CLIENT_ID','CLIENT_SECRET')
   .then(response => console.log(response));
 ```
 
@@ -50,7 +60,7 @@ Parameters:
 * `query`(optional): a search query term.
 
 ```js
-const newest = deviantnode.getHotDeviations('CLIENT_ID','CLIENT_SECRET')
+deviantnode.getNewestDeviations('CLIENT_ID','CLIENT_SECRET')
   .then(response => console.log(response));
 ```
 
@@ -63,7 +73,7 @@ Parameters:
 * `query`(optional): a search query term.
 
 ```js
-const popular = deviantnode.getPopularDeviations('CLIENT_ID','CLIENT_SECRET')
+deviantnode.getPopularDeviations('CLIENT_ID','CLIENT_SECRET')
   .then(response => console.log(response));
 ```
 
@@ -76,7 +86,7 @@ Parameters:
 * `tag`: the tag to browse.
 
 ```js
-const tag = deviantnode.getTagDeviations('CLIENT_ID','CLIENT_SECRET', 'Hi')
+deviantnode.getTagDeviations('CLIENT_ID','CLIENT_SECRET', 'Hi')
   .then(response => console.log(response));
 ```
 
@@ -88,7 +98,7 @@ Parameters:
 * `CLIENT_SECRET`: the client secret from your application.
 
 ```js
-const undiscovered = deviantnode.getUndiscoveredDeviations('CLIENT_ID','CLIENT_SECRET')
+deviantnode.getUndiscoveredDeviations('CLIENT_ID','CLIENT_SECRET')
   .then(response => console.log(response));
 ```
 
@@ -101,8 +111,8 @@ Parameters:
 * `username`: the user whose gallery to fetch.
 
 ```js
-const all = deviantnode.getGalleryAllDeviations('CLIENT_ID','CLIENT_SECRET', 'EduardoBarra')
+deviantnode.getGalleryAllDeviations('CLIENT_ID','CLIENT_SECRET', 'EduardoBarra')
   .then(response => console.log(response));
 ```
 
-and,.,. that's all. soon there will be more functions.!
+and,.,. that's all.  soon there will be more functions.!
