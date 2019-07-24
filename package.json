@@ -1,0 +1,24 @@
+{
+  "name": "deviantnode",
+  "version": "0.1.0",
+  "description": "a pretty basic node.js library using the deviantart api",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardobarra352/deviantnode.git"
+  },
+  "keywords": [
+    "deviantart",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "eduardobarra352",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eduardobarra352/deviantnode/issues"
+  },
+  "homepage": "https://github.com/eduardobarra352/deviantnode#readme"
+}
