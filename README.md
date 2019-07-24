@@ -151,8 +151,8 @@ Parameters:
 * `CLIENT_SECRET`: the client secret from your application.
 * `options`: 
   - `username`: username to lookup profile of.
-  - `collections`(optional): the pagination offset.
-  - `galleries`(optional): the pagination limit.
+  - `collections`(optional): include collection folder info.
+  - `galleries`(optional): include gallery folder info.
 
 ```js
 deviantnode.getUserInfo('CLIENT_ID','CLIENT_SECRET', { username: 'EduardoBarra' })

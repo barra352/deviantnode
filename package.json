@@ -1,6 +1,6 @@
 {
   "name": "deviantnode",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "a pretty basic node.js library using the deviantart api",
   "main": "index.js",
   "scripts": {
